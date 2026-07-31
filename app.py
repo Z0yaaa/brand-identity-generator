@@ -62,7 +62,6 @@ st.markdown(
 )
 
 st.markdown("<div class='title'>🌈 Brand Identity Generator</div>", unsafe_allow_html=True)
-st.markdown("<div class='subtext'>Powered by OpenRouter & Mistral 7B</div>", unsafe_allow_html=True)
 
 st.markdown("---")
 
@@ -82,7 +81,7 @@ if st.button("🚀 Generate Brand Identity"):
             prompt = build_prompt(idea, audience, tone)
             try:
                 response = client.chat.completions.create(
-                    model="mistralai/mistral-small-3.2-24b-instruct:free",
+                    model="mistralai/mistral-small-3.2-24b-instruct",
                     messages=[{"role": "user", "content": prompt}]
                 )
                 result = response.choices[0].message.content.strip()
