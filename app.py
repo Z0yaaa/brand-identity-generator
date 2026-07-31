@@ -82,7 +82,7 @@ if st.button("🚀 Generate Brand Identity"):
             prompt = build_prompt(idea, audience, tone)
             try:
                 response = client.chat.completions.create(
-                    model="mistralai/mistral-7b-instruct",
+                    model="mistralai/mistral-small-3.2-24b-instruct:free",
                     messages=[{"role": "user", "content": prompt}]
                 )
                 result = response.choices[0].message.content.strip()
